@@ -1,0 +1,47 @@
+** read mesh
+*include, input=./beam.msh
+***********************************************************************
+** BC
+***********************************************************************
+*include, input=./spc.nam
+*BOUNDARY
+Nspc,1,3
+**************************************************
+**               MATERIALDATA
+**   (K N,MM,S-SYSTEM:
+**    E-MODUL IN N/MM**2, ALPHA IN 1/K, RHO IN
+**    10**3*KG/MM**3, TIME IN S, DISP. IN
+**    MM, STRESS. IN MPA)
+*************************************************
+*MATERIAL,NAME=MAT
+*ELASTIC,TYPE=ISO
+210000.,0.3,293.15
+*DENSITY
+9.e-09
+*SOLID SECTION,ELSET=Eall,MATERIAL=MAT
+**
+***
+**************************************************************
+*STEP
+*FREQUENCY,EIGENSOLVER=LANCZOS, NORMALIZATION=MASS
+20
+*********** output
+*NODE PRINT,GLOBAL=YES, FREQUENCY=0
+U
+*EL PRINT,FREQUENCY=0
+*NODE FILE,FREQUENCY=1
+U
+*EL FILE, FREQUENCY=0, POSITION=AVERAGED AT NODES
+*END STEP
+**************************************************************
+*STEP, PERTURBATION
+*BOUNDARY, OP=NEW
+*EQUATION, REMOVE ALL
+*FREQUENCY, SOLVER=MATRIXSTORAGE, GLOBAL=YES
+1
+*********** output
+*EL PRINT,FREQUENCY=0
+*NODE FILE,FREQUENCY=0
+U
+*EL FILE, FREQUENCY=0, POSITION=AVERAGED AT NODES
+*END STEP
