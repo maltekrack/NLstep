@@ -27,15 +27,15 @@ The included examples illustrate the usage of NLstep. Typically, this entails th
 
 The following content is found in the `EXAMPLES` folder:
 
-        `01_bouncingBar`: common bouncing bar problem; similar results are shown in [1]; features a 1D unilateral contact variant of `sim_contact3D.m`
+`01_bouncingBar`: common bouncing bar problem; similar results are shown in [1]; features a 1D unilateral contact variant of `sim_contact3D.m`
         
-        `02_beamFrictionFrequencySweep`: cantilvered Euler-Bernoulli beam subjected to dry friction harmonically driven near resonance with the fundamental bending mode; comparison against Harmonic Balance results; features a 1D frictional contact variant of `sim_contact3D.m`
+`02_beamFrictionFrequencySweep`: cantilvered Euler-Bernoulli beam subjected to dry friction harmonically driven near resonance with the fundamental bending mode; comparison against Harmonic Balance results; features a 1D frictional contact variant of `sim_contact3D.m`
        
-        `03_bladeCasingRubbing`: 3D FE model of a rotating compressor blade subjected to frictional impacts with a rigid oval casing; similar results are shown in [1]
+`03_bladeCasingRubbing`: 3D FE model of a rotating compressor blade subjected to frictional impacts with a rigid oval casing; similar results are shown in [1]
        
-        `04_obliqueContactStickSlipLiftoff`: 3D FE model of a cantilever subjected to oblique contact at its free end; the contact is initially preloaded but undergoes stick-slip-liftoff transitions under dynamic loading; illustrates how node-based quadrature of the contact stress can be implemented; illustrates consistency and benefit of eliminating presumed sticking contacts from the projective equation system in `sim_contact3D.m`
+`04_obliqueContactStickSlipLiftoff`: 3D FE model of a cantilever subjected to oblique contact at its free end; the contact is initially preloaded but undergoes stick-slip-liftoff transitions under dynamic loading; illustrates how node-based quadrature of the contact stress can be implemented; illustrates consistency and benefit of eliminating presumed sticking contacts from the projective equation system in `sim_contact3D.m`
        
-        `05_squeakNoiseTestRig`: cantilevered beam with a curved plate bolted to its free end, pressed against a flat plate, mimicking squeak noise generation [3]; illustrates simulation with penalty regularized contact
+`05_squeakNoiseTestRig`: cantilevered beam with a curved plate bolted to its free end, pressed against a flat plate, mimicking squeak noise generation [3]; illustrates simulation with penalty regularized contact
 
 # Requirements
 The tool relies on NLvib [2], primarily for the definition of mechanical systems including nonlinear (contact) elements. In fact, the two classes, `FEmodel` and `CMS_ROM`, have been added to NLvib which were only used within NLstep by the time of the initial release (yet these seemed useful for NLvib also). These import / handle data exported from a conventional FE tool, and apply component mode synthesis as required in NLstep, respectively. For more information, please see the header of the respective class. 
