@@ -37,6 +37,8 @@ The following content is found in the `EXAMPLES` folder:
        
 `05_squeakNoiseTestRig`: cantilevered beam with a curved plate bolted to its free end, pressed against a flat plate, mimicking squeak noise generation [3]; illustrates simulation with penalty regularized contact
 
+For details, please see header of respective example main file (script).
+
 # Requirements
 The tool relies on NLvib [2], primarily for the definition of mechanical systems including nonlinear (contact) elements. In fact, the two classes, `FEmodel` and `CMS_ROM`, have been added to NLvib which were only used within NLstep by the time of the initial release (yet these seemed useful for NLvib also). These import / handle data exported from a conventional FE tool, and apply component mode synthesis as required in NLstep, respectively. For more information, please see the header of the respective class. 
 
