@@ -3,6 +3,8 @@ NLstep is an academic Matlab tool for time step integration of mechanical system
 
 A central motivation behind NLstep is to overcome the limitations of Harmonic Balance (as implemented in NLvib [2]). In particular, NLstep permits to study transient dynamics as well as non-periodi steady state dynamics (e.g. deterministic chaos). NLstep is competitive alternative to Harmonic Balance also in the periodic case, especially for sharply or even non-regularized contact, where the transitions (stick/slip; opening/closing) slow down the  harmonic convergence. 
 
+NLstep was developed by Malte Krack and Johann Gross. If you use NLstep, please refer to our article [1]. We always appreciate any kind of feedback you may have. If you encounter any problems, which you cannot solve, please do not hesitate to contact the authors of this code (malte.krack@ila.uni-stuttgart.de; johann.gross@ila.uni-stuttgart.de).
+
 In the following, an overview is given over the tool's key functionality, included examles, and requirements. 
 
 # Key functionality 
@@ -40,11 +42,11 @@ The following content is found in the `EXAMPLES` folder:
 For details, please see header of respective example main file (script).
 
 # Requirements
-The tool relies on NLvib [2], primarily for the definition of mechanical systems including nonlinear (contact) elements. In fact, the two classes, `FEmodel` and `CMS_ROM`, have been added to NLvib which were only used within NLstep by the time of the initial release (yet these seemed useful for NLvib also). These import / handle data exported from a conventional FE tool, and apply component mode synthesis as required in NLstep, respectively. For more information, please see the header of the respective class. 
+The tool relies on NLvib [2], primarily for the definition of mechanical systems including nonlinear (contact) elements. In fact, the two classes, `FEmodel` and `CMS_ROM`, have been added to NLvib which were only used within NLstep by the time of the initial release (yet these seemed useful for NLvib also). These import / handle data exported from a conventional FE tool, and apply component mode synthesis as required in NLstep, respectively. For more information, please see the header of the respective class. When running any of the included examples, the script `requireNLvib.m` in the `SRC` folder is called, which checks if the required NLvib functions/classes are on the Matlab search path. If they are not, you are prompted an error how to fix this. For convenience, you can download NLvib from the github repository [2], and simply extract it in NLstep's `SRC` folder. When running any of the included examples, all sub-folders within NLstep's `SRC` folder are added to the search path, which then includes also the required NLvib functions/classes.
+
+To open the animation file generated when running the `03_bladeCasingRubbing` example, you need CalculiX, which is an open source FE tool available at https://www.dhondt.de/.
 
 The tool should work well with a wide range of Matlab releases, without the need for any toolbox. There is currently one exception: If you want to run NLvib's solve_and_continue.m, as it is done in the example `02_beamFrictionFrequencySweep` to compute the Harmonic Balance approximation, you need the optimization toolbox.
-
-NLstep was developed by Malte Krack and Johann Gross. If you use NLstep, please refer to our article [1]. We always appreciate any kind of feedback you may have. If you encounter any problems, which you cannot solve, please do not hesitate to contact the authors of this code (malte.krack@ila.uni-stuttgart.de; johann.gross@ila.uni-stuttgart.de).
 
 # References 
 
