@@ -229,4 +229,5 @@ qFE = bladeROM.T*Q(:,idxANIMATE);
 % Animate FE model
 animate(bladeFEmodel,qFE);
 % You can open the animation file with CalculiX, which is an open source FE
-% tool available at https://www.dhondt.de/.
+% tool available at https://www.dhondt.de/. For convenience, a according 
+% gif has been uploaded.
