@@ -33,7 +33,7 @@ The following content is found in the `EXAMPLES` folder:
         
 `02_beamFrictionFrequencySweep`: cantilvered Euler-Bernoulli beam subjected to dry friction harmonically driven near resonance with the fundamental bending mode; comparison against Harmonic Balance results; features a 1D frictional contact variant of `sim_contact3D.m`
        
-`03_bladeCasingRubbing`: 3D FE model of a rotating compressor blade subjected to frictional impacts with a rigid oval casing; similar results are shown in [1]
+`03_bladeCasingRubbing`: 3D FE model of a rotating compressor blade subjected to frictional impacts with a rigid oval casing; unzip the matrices.zip file before running the example; similar results are shown in [1]
        
 `04_obliqueContactStickSlipLiftoff`: 3D FE model of a cantilever subjected to oblique contact at its free end; the contact is initially preloaded but undergoes stick-slip-liftoff transitions under dynamic loading; illustrates how node-based quadrature of the contact stress can be implemented; illustrates consistency and benefit of eliminating presumed sticking contacts from the projective equation system in `sim_contact3D.m`
        
