@@ -13,7 +13,7 @@
 % system reads:
 %
 %       M * \ddot q + D * \dot q + K * q + fnl = fex(t),            (1)
-%       fnl = \sum_j w_j * f_j ( w_j^T * q, q_j^T * \dot q ).       (2)
+%       fnl = \sum_j w_j * f_j ( w_j^T * q, w_j^T * \dot q ).       (2)
 %
 % Herein, \dot denotes derivative with respect to time t. q is the
 % vector of n generalized coordinates. M, D, K are real n x n coefficient 
