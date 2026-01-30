@@ -47,13 +47,13 @@
 % specified. The nonlinear elements are defined in
 % model.nonlinear_elements, which is a cell array of structures. For 
 % element nl, the parameters are specified as fields of 
-% model.nonlinear_elements{nl}, with the name type, and possible more
+% model.nonlinear_elements{nl}, with the name 'type', and possible more
 % parameters which are specific to the given type. The w_j is given by the
-% field name force_direction. In the case of 3D contact only, it is
+% field name 'force_direction'. In the case of 3D contact only, it is
 % optional (if you do not specify it, unit directions will be assumed, as
 % in sim_contact3D.m), otherwise it is mandatory. For contact, important
-% field names are frictionCoefficient, imposedGap, preload, and
-% stiffness. Most of the names should be self-explanatory. In this 
+% field names are 'frictionCoefficient', 'imposedGap', 'preload', and
+% 'stiffness'. Most of the names should be self-explanatory. In this 
 % function, all of those must have fixed values (function handles are not
 % allowed). The stiffness refers to the penalty parameter. The preload is 
 % to be specified as consistent nodal force, and, similarly, the stiffness 
@@ -61,7 +61,7 @@
 % implement a uniform stiffness per area and/or an imposed normal pressure, 
 % using a node-based quadrature, you have to multiply by the respective 
 % area before. Note that this is in contrast to sim_contact3D.m, where the
-% area field is treated within the function.
+% 'area' field is treated within the function.
 %
 % TIME STEP INTEGRATION
 % The equilibrium averaging concept is applied to (1)-(2), where the 
@@ -75,8 +75,8 @@
 % popular methods arise such as the (conventional) Newmark method for
 % alpha_f=0=alpha_m, or the HHT method.
 % The integration method further relies on Newmark's quadrature rules,
-%                 accE = a1*(qE-qS)-a2*uS-a3*accS,                  (4)
-%                 velE = a4*(qE-qS)+a5*uS+a6+accS,                  (5)
+%                 accE = a1*(qE-qS)-a2*velS-a3*accS,                  (4)
+%                 velE = a4*(qE-qS)+a5*velS+a6*accS,                  (5)
 % where velE, velS denote the velocity vector at current and previous
 % time level, and qE, qS analogously for the displacement vector. The
 % coefficients a1 through a6 are expressed using the parameters beta
@@ -135,7 +135,7 @@
 %                                   'HHT' and specify the parameter 
 %                                       scheme.alpha (leading to 
 %                                       alpha_f=alpha, 
-%                                       alpha_m,gamma,beta as in (b)), or
+%                                       alpha_m,gamma,beta as in 'Newmark'), or
 %                                   'GeneralizedAlpha' and specify the
 %                                       parameter rho=scheme.rhoinfty
 %                                       (leading to
