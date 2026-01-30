@@ -97,9 +97,9 @@
 % sorting of the coefficient matrices (there is no resorting or coordinate
 % transform done in this function!).
 % For contact element nl, the contact parameters are specified as fields of
-% MBmodel.nonlinear_elements{nl}, with the names type, frictionCoefficient, 
-% imposedGap, imposedGapVelocity, preload, and area. The names should be
-% self-explanatory. The field type must be '3D' for this function. 
+% MBmodel.nonlinear_elements{nl}, with the names 'type', 'frictionCoefficient', 
+% 'imposedGap', 'imposedGapVelocity', 'preload', and 'area'. The names should be
+% self-explanatory. The field 'type' must be '3D' for this function. 
 % Otherwise, the friction coefficient is the only mandatory field,
 % while the rest is set to zero if not specified, and area=1 is used on
 % default. Imposed gap and imposed gap velocity can have explicit time 
