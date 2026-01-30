@@ -774,8 +774,8 @@ function [lam,output,isClosed,isSliding,epsAL] = ...
 % The options structure Sopt must contain the relative error tolerance tol, 
 % the scaling parameter epsALscl, and the maximum number of iterations 
 % itermax. The residuum is measured in terms of the L-infinity norm of 
-% the difference of lam between the last two iterations, and it is 
-% the tolerance is relative to the L-infinity norm of lam. The scaling
+% the difference of lam between the last two iterations, and tol is 
+% the tolerance relative to the L-infinity norm of lam. The scaling
 % parameter increases (epsALscl>1) or decreases (0<epsALscl<1) the
 % parameter epsAL with respect to the one recommended in [2].
 %========================================================================
